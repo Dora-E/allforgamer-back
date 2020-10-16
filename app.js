@@ -15,6 +15,9 @@ const mongoose = require("mongoose");
 const app = express();
 var cors = require('cors')
 const bcrypt = require('bcrypt-nodejs');
+const {
+  log
+} = require("console");
 
 app.use(cors())
 bcrypt.genSalt(10, function (salt) {
@@ -49,6 +52,8 @@ app.use(
     resave: false,
   })
 );
+
+//console.log("foo");
 
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
