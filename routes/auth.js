@@ -132,7 +132,7 @@ router.post("/signup", uploader.single("avatar"), async (req, res, next) => {
             user.password = hashed; // on remplace le mot de passe "en clair" par sa version cryptée
 
             // finalement on insère le nouvel utilisateur en base de données
-            await UserModel.create(user);
+            await userModel.create(user);
             return res.status(200).json({
                 msg: "signed up !",
                 level: "success"
