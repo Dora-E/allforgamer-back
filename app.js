@@ -14,8 +14,14 @@ const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 const app = express();
 var cors = require('cors')
+const bcrypt = require('bcrypt-nodejs');
 
 app.use(cors())
+bcrypt.genSalt(10, function (salt) {
+  bcrypt.hash(password, salt, null, function (err, hashedPassword) {
+    // Function body
+  });
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

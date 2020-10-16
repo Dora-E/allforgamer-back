@@ -1,6 +1,6 @@
 {
   "name": "v3-back",
-  "version": "0.0.0",
+  "version": "12.16.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
