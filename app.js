@@ -19,7 +19,7 @@ var cors = require('cors')
 
 
 
-app.use(cors("*"))
+app.use(cors(['https://git.heroku.com/afgback.git', 'https://git.heroku.com/allforgamers.git']))
 
 // view engine setup
 app.use(logger('dev'));
