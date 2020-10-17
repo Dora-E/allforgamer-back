@@ -106,6 +106,7 @@ router.post("/signup", uploader.single("avatar"), async (req, res, next) => {
     const user = req.body;
     console.log(req.body)
     if (req.file) user.avatar = req.file.path; // on associe l'image stockée sur cloudinary à l'user à insérer en base de données
+    console.log(req.file)
 
     if (!user.first_name || !user.last_name || !user.password || !user.email) {
         return res.status(422).json({
@@ -141,6 +142,22 @@ router.post("/signup", uploader.single("avatar"), async (req, res, next) => {
             next(err);
         }
     }
+});
+
+router.post("/testSignup", uploader.single("lol"), async (req, res, next) => {
+    const user = req.body;
+
+    // if (req.file) user.avatar = req.file.path
+
+    console.log("Route : OK")
+    console.log(user)
+    // console.log("req.body", req.body)
+    // res.json({
+    //     lala: "lolo"
+    // })
+
+    res.json(user)
+
 });
 
 module.exports = router;

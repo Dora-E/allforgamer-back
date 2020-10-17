@@ -13,16 +13,18 @@ const commentairesRouter = require('./routes/commentaires');
 const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 const app = express();
+const hbs = require('hbs')
 var cors = require('cors')
 
 
 
 
-app.use(cors())
+app.use(cors("*"))
 
 // view engine setup
 app.use(logger('dev'));
 app.use(express.json());
+app.set('view engine', 'hbs');
 app.use(express.urlencoded({
   extended: false
 }));
